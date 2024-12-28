@@ -63,5 +63,5 @@ func (u *Uspc) Query(v string) (string, error) {
 		return "", err
 	}
 
-	return strings.ReplaceAll(string(b), "\n", ""), nil
+	return strings.TrimSpace(string(b)), nil
 }
