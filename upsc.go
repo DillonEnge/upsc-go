@@ -1,6 +1,9 @@
 package upscgo
 
-import "os/exec"
+import (
+	"os/exec"
+	"strings"
+)
 
 const (
 	STATUS_ONLINE                 = "OL"
@@ -60,5 +63,5 @@ func (u *Uspc) Query(v string) (string, error) {
 		return "", err
 	}
 
-	return string(b), nil
+	return strings.ReplaceAll(string(b), "\n", ""), nil
 }
